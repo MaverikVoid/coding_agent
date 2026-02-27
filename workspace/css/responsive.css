@@ -1,0 +1,256 @@
+css
+/* responsive.css - Responsive design for portfolio website */
+
+/* Base responsive settings */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile First Approach - Default styles are for mobile */
+
+/* Tablet Breakpoint */
+@media screen and (min-width: 768px) {
+    /* Navigation */
+    .nav-toggle {
+        display: none;
+    }
+    
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        transform: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+    
+    .nav-menu.active {
+        transform: none;
+    }
+    
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+    
+    /* About Section */
+    .about-content {
+        flex-direction: row;
+        gap: 3rem;
+    }
+    
+    .about-text {
+        flex: 1;
+    }
+    
+    .about-image {
+        flex: 0 0 300px;
+    }
+    
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Contact Form */
+    .contact-container {
+        flex-direction: row;
+        gap: 4rem;
+    }
+    
+    .contact-info, .contact-form {
+        flex: 1;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .footer-links {
+        margin-top: 0;
+    }
+}
+
+/* Desktop Breakpoint */
+@media screen and (min-width: 1024px) {
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Project Details */
+    .project-detail {
+        flex-direction: row;
+        gap: 4rem;
+    }
+    
+    .project-info {
+        flex: 1;
+    }
+    
+    .project-gallery {
+        flex: 1;
+    }
+    
+    /* Contact Page */
+    .contact-page .contact-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Large Desktop Breakpoint */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-content h1 {
+        font-size: 4.5rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    /* Typography */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Section Padding */
+    section {
+        padding: 3rem 1rem;
+    }
+    
+    /* Skills */
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    /* Project Cards */
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    /* Form Elements */
+    input, textarea {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mode for Mobile */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+    
+    .nav-menu {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .nav-menu,
+    .footer,
+    .btn,
+    .contact-form {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    section {
+        padding: 1rem 0;
+        page-break-inside: avoid;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000;
+        --secondary-color: #000;
+        --text-color: #000;
+        --background-color: #fff
